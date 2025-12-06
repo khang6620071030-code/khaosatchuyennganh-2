@@ -391,7 +391,8 @@
                         <div class="p-4 border border-gray-200 rounded-xl shadow-md bg-white">
                             <p class="font-semibold text-dark-text mb-3">
                                 <span class="text-primary-blue font-extrabold mr-2">Q${q.id}.</span> ${q.text}
-                            <p
+                                <!-- ĐÃ XÓA TÊN NGÀNH KHỎI PHẦN NÀY THEO YÊU CẦU CỦA NGƯỜI DÙNG -->
+                            </p>
                             <div class="flex flex-wrap justify-between space-x-2">
                                 ${[1, 2, 3, 4, 5].map(score => `
                                     <input type="radio" id="q${q.id}-${score}" name="q${q.id}" value="${score}" class="question-option hidden" data-major="${q.major}" ${savedScore === score ? 'checked' : ''}>
