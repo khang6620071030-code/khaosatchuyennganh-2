@@ -213,7 +213,7 @@
         let currentStep = 1;
         const totalSteps = 6;
         const totalQuizCards = 5;
-        const maxScorePerMajor = 25;
+        const maxScorePerMajor = 25; // 5 thẻ x 5 điểm/câu = 25
 
         // Định nghĩa các chuyên ngành và mã của chúng
         const majors = {
@@ -286,44 +286,44 @@
         // Định nghĩa 30 câu hỏi theo từng thẻ và chuyên ngành liên quan
         const allQuestions = [
             // Thẻ 1: Năng lực (Q1-Q6)
-            { id: 1, text: 'Tôi có khả năng nghiên cứu các văn bản pháp luật, chính sách và rút ra ý chính.', category: 'Năng lực' },
-            { id: 2, text: 'Tôi giỏi phân tích dữ liệu, số liệu hoặc các thông tin mang tính logic.', category: 'Năng lực' },
-            { id: 3, text: 'Tôi có tư duy sáng tạo và thích tạo ra các giải pháp mới.', category: 'Năng lực' },
-            { id: 4, text: 'Tôi xây dựng các nền tảng giá trị, chuẩn mực và thái độ nghề nghiệp trong môi trường quản trị hiện đại.', category: 'Năng lực' },
-            { id: 5, text: 'Tôi có khả năng phát triển con người trong tổ chức, từ tuyển dụng, đào tạo đến tạo động lực và đánh giá hiệu quả.', category: 'Năng lực' },
-            { id: 6, text: 'Tôi vận hành của các hệ thống kinh tế và các công cụ phân tích nhằm hỗ trợ hoạch định chính sách phân tích kinh tế.',  category: 'Năng lực' },
+            { id: 1, text: 'Tôi có khả năng nghiên cứu các văn bản pháp luật, chính sách và rút ra ý chính.', major: 'CSQLCC', category: 'Năng lực' },
+            { id: 2, text: 'Tôi giỏi phân tích dữ liệu, số liệu hoặc các thông tin mang tính logic.', major: 'QLSHTT', category: 'Năng lực' },
+            { id: 3, text: 'Tôi có tư duy sáng tạo và thích tạo ra các giải pháp mới.', major: 'QLKHCN', category: 'Năng lực' },
+            { id: 4, text: 'Tôi xây dựng các nền tảng giá trị, chuẩn mực và thái độ nghề nghiệp trong môi trường quản trị hiện đại.', major: 'VHĐQL', category: 'Năng lực' },
+            { id: 5, text: 'Tôi có khả năng phát triển con người trong tổ chức, từ tuyển dụng, đào tạo đến tạo động lực và đánh giá hiệu quả.', major: 'QLNNL', category: 'Năng lực' },
+            { id: 6, text: 'Tôi vận hành của các hệ thống kinh tế và các công cụ phân tích nhằm hỗ trợ hoạch định chính sách phân tích kinh tế.', major: 'QLKT', category: 'Năng lực' },
 
             // Thẻ 2: Tính cách và Phong cách làm việc (Q7-Q12)
-            { id: 7, text: 'Tôi có tính cách gần gũi, thấu hiểu cộng đồng và làm việc theo hướng thực tế, lắng nghe và phối hợp nhiều bên để giải quyết vấn đề hiệu quả.',  category: 'Tính cách' },
-            { id: 8, text: 'Tôi là người cẩn trọng, công bằng và làm việc dựa trên quy định - chứng cứ, luôn đảm bảo tính minh bạch và chính xác trong mọi quyết định.', category: 'Tính cách' },
-            { id: 9, text: 'Tôi có tư duy sáng tạo, thích đổi mới và làm việc dựa trên dữ liệu – bằng chứng để liên tục đề xuất những giải pháp khoa học khả thi.',  category: 'Tính cách' },
-            { id: 10, text: 'Tính cách điềm đạm và giàu cảm thông giúp tôi làm việc theo nguyên tắc đạo đức, luôn cân nhắc yếu tố văn hoá và nhân văn trong mọi hoạt động quản lý.', category: 'Tính cách' },
-            { id: 11, text: 'Tôi có khả năng kết nối tốt và làm việc dựa trên giao tiếp rõ ràng, lắng nghe và hỗ trợ để phát huy thế mạnh của từng cá nhân trong tổ chức.',  category: 'Tính cách' },
-            { id: 12, text: 'Tôi có tư duy lý trí, hệ thống và làm việc theo hướng phân tích dữ liệu – tối ưu nguồn lực, đảm bảo hiệu quả và tính bền vững trong quyết định kinh tế.',  category: 'Tính cách' },
+            { id: 7, text: 'Tôi có tính cách gần gũi, thấu hiểu cộng đồng và làm việc theo hướng thực tế, lắng nghe và phối hợp nhiều bên để giải quyết vấn đề hiệu quả.', major: 'CSQLCC', category: 'Tính cách' },
+            { id: 8, text: 'Tôi là người cẩn trọng, công bằng và làm việc dựa trên quy định - chứng cứ, luôn đảm bảo tính minh bạch và chính xác trong mọi quyết định.', major: 'QLSHTT', category: 'Tính cách' },
+            { id: 9, text: 'Tôi có tư duy sáng tạo, thích đổi mới và làm việc dựa trên dữ liệu – bằng chứng để liên tục đề xuất những giải pháp khoa học khả thi.', major: 'QLKHCN', category: 'Tính cách' },
+            { id: 10, text: 'Tính cách điềm đạm và giàu cảm thông giúp tôi làm việc theo nguyên tắc đạo đức, luôn cân nhắc yếu tố văn hoá và nhân văn trong mọi hoạt động quản lý.', major: 'VHĐQL', category: 'Tính cách' },
+            { id: 11, text: 'Tôi có khả năng kết nối tốt và làm việc dựa trên giao tiếp rõ ràng, lắng nghe và hỗ trợ để phát huy thế mạnh của từng cá nhân trong tổ chức.', major: 'QLNNL', category: 'Tính cách' },
+            { id: 12, text: 'Tôi có tư duy lý trí, hệ thống và làm việc theo hướng phân tích dữ liệu – tối ưu nguồn lực, đảm bảo hiệu quả và tính bền vững trong quyết định kinh tế.', major: 'QLKT', category: 'Tính cách' },
             
             // Thẻ 3: Kĩ năng (Q13-Q18)
-            { id: 13, text: 'Tôi có kỹ năng khảo sát cộng đồng, phân tích vấn đề địa phương và phối hợp với các bên để xây dựng, triển khai và giải quyết xung đột trong chính sách cơ sở.',  category: 'Kĩ năng' },
-            { id: 14, text: 'Tôi có kỹ năng đọc hiểu pháp lý, phân tích chứng cứ, đánh giá tài sản trí tuệ và xử lý quy trình đăng ký cũng như tranh chấp SHTT.',  category: 'Kĩ năng' },
-            { id: 15, text: 'Tôi có kỹ năng tìm kiếm tri thức khoa học, phân tích công nghệ, xây dựng đề tài nghiên cứu và đề xuất các giải pháp đổi mới dựa trên dữ liệu.',  category: 'Kĩ năng' },
-            { id: 16, text: 'Tôi có kỹ năng phân tích văn hóa tổ chức, đánh giá tác động đạo đức, giao tiếp chuẩn mực và xử lý hài hòa các tình huống nội bộ.', category: 'Kĩ năng' },
-            { id: 17, text: 'Tôi có kỹ năng giao tiếp – phỏng vấn, đào tạo và đánh giá nhân sự, giải quyết xung đột và xây dựng các chính sách thúc đẩy động lực.',  category: 'Kĩ năng' },
-            { id: 18, text: 'Tôi có kỹ năng phân tích dữ liệu, lập kế hoạch – dự báo, tính toán chi phí – lợi ích và đánh giá hiệu quả hoạt động kinh tế – sản xuất.', category: 'Kĩ năng' },
+            { id: 13, text: 'Tôi có kỹ năng khảo sát cộng đồng, phân tích vấn đề địa phương và phối hợp với các bên để xây dựng, triển khai và giải quyết xung đột trong chính sách cơ sở.', major: 'CSQLCC', category: 'Kĩ năng' },
+            { id: 14, text: 'Tôi có kỹ năng đọc hiểu pháp lý, phân tích chứng cứ, đánh giá tài sản trí tuệ và xử lý quy trình đăng ký cũng như tranh chấp SHTT.', major: 'QLSHTT', category: 'Kĩ năng' },
+            { id: 15, text: 'Tôi có kỹ năng tìm kiếm tri thức khoa học, phân tích công nghệ, xây dựng đề tài nghiên cứu và đề xuất các giải pháp đổi mới dựa trên dữ liệu.', major: 'QLKHCN', category: 'Kĩ năng' },
+            { id: 16, text: 'Tôi có kỹ năng phân tích văn hóa tổ chức, đánh giá tác động đạo đức, giao tiếp chuẩn mực và xử lý hài hòa các tình huống nội bộ.', major: 'VHĐQL', category: 'Kĩ năng' },
+            { id: 17, text: 'Tôi có kỹ năng giao tiếp – phỏng vấn, đào tạo và đánh giá nhân sự, giải quyết xung đột và xây dựng các chính sách thúc đẩy động lực.', major: 'QLNNL', category: 'Kĩ năng' },
+            { id: 18, text: 'Tôi có kỹ năng phân tích dữ liệu, lập kế hoạch – dự báo, tính toán chi phí – lợi ích và đánh giá hiệu quả hoạt động kinh tế – sản xuất.', major: 'QLKT', category: 'Kĩ năng' },
 
             // Thẻ 4: Sở thích (Q19-Q24)
-            { id: 19, text: 'Tôi thích quan sát đời sống tại cộng đồng, tìm hiểu cách người dân sinh hoạt, làm việc và phản hồi với các chính sách ở địa phương.', category: 'Sở thích' },
-            { id: 20, text: 'Tôi thích tìm hiểu về sở hữu trí tuệ như quyền tác giả, thương hiệu, sáng chế.',  category: 'Sở thích' },
-            { id: 21, text: 'Tôi quan tâm đến đổi mới công nghệ và các xu hướng khoa học hiện đại.', category: 'Sở thích' },
-            { id: 22, text: 'Tôi yêu thích tìm hiểu về văn hóa, đạo đức, hành vi tổ chức.',  category: 'Sở thích' },
-            { id: 23, text: 'Tôi hứng thú với công việc liên quan đến con người (tuyển dụng, đào tạo, phát triển).', category: 'Sở thích' },
-            { id: 24, text: 'Tôi thích các công việc liên quan tới kinh tế, tài chính hoặc phân tích thị trường.', category: 'Sở thích' },
+            { id: 19, text: 'Tôi thích quan sát đời sống tại cộng đồng, tìm hiểu cách người dân sinh hoạt, làm việc và phản hồi với các chính sách ở địa phương.', major: 'CSQLCC', category: 'Sở thích' },
+            { id: 20, text: 'Tôi thích tìm hiểu về sở hữu trí tuệ như quyền tác giả, thương hiệu, sáng chế.', major: 'QLSHTT', category: 'Sở thích' },
+            { id: 21, text: 'Tôi quan tâm đến đổi mới công nghệ và các xu hướng khoa học hiện đại.', major: 'QLKHCN', category: 'Sở thích' },
+            { id: 22, text: 'Tôi yêu thích tìm hiểu về văn hóa, đạo đức, hành vi tổ chức.', major: 'VHĐQL', category: 'Sở thích' },
+            { id: 23, text: 'Tôi hứng thú với công việc liên quan đến con người (tuyển dụng, đào tạo, phát triển).', major: 'QLNNL', category: 'Sở thích' },
+            { id: 24, text: 'Tôi thích các công việc liên quan tới kinh tế, tài chính hoặc phân tích thị trường.', major: 'QLKT', category: 'Sở thích' },
             
             // Thẻ 5: Nhu cầu mong muốn (Q25-Q30)
-            { id: 25, text: 'Mong muốn làm việc trong lĩnh vực mang lại giá trị cho xã hội hoặc cộng đồng (vì quản lý cấp cơ sở phục vụ cộng đồng).', category: 'Nhu cầu' },
-            { id: 26, text: 'Mong muốn có vị trí quản lý hoặc lãnh đạo trong tương lai (phù hợp với quản lý nhân sự).', category: 'Nhu cầu' }, // Note: Swapped Q26 and Q27 order from file to maintain major grouping
-            { id: 27, text: 'Mong muốn làm việc trong môi trường chuyên nghiệp, đổi mới, sáng tạo (phù hợp với lĩnh vực SHTT, cần môi trường sáng tạo).',  category: 'Nhu cầu' },
-            { id: 28, text: 'Mong muốn nghề nghiệp có nhiều cơ hội phát triển dài hạn (phù hợp với nghiên cứu, công nghệ, đổi mới).',category: 'Nhu cầu' },
-            { id: 29, text: 'Mong muốn công việc có thu nhập ổn định và tăng trưởng tốt (rõ ràng hợp kinh tế - tài chính).',  category: 'Nhu cầu' },
-            { id: 30, text: 'Tôi muốn công việc giúp thúc đẩy văn hóa và giá trị đạo đức trong tổ chức.', category: 'Nhu cầu' },
+            { id: 25, text: 'Mong muốn làm việc trong lĩnh vực mang lại giá trị cho xã hội hoặc cộng đồng (vì quản lý cấp cơ sở phục vụ cộng đồng).', major: 'CSQLCC', category: 'Nhu cầu' },
+            { id: 26, text: 'Mong muốn có vị trí quản lý hoặc lãnh đạo trong tương lai (phù hợp với quản lý nhân sự).', major: 'QLNNL', category: 'Nhu cầu' }, // Note: Swapped Q26 and Q27 order from file to maintain major grouping
+            { id: 27, text: 'Mong muốn làm việc trong môi trường chuyên nghiệp, đổi mới, sáng tạo (phù hợp với lĩnh vực SHTT, cần môi trường sáng tạo).', major: 'QLSHTT', category: 'Nhu cầu' },
+            { id: 28, text: 'Mong muốn nghề nghiệp có nhiều cơ hội phát triển dài hạn (phù hợp với nghiên cứu, công nghệ, đổi mới).', major: 'QLKHCN', category: 'Nhu cầu' },
+            { id: 29, text: 'Mong muốn công việc có thu nhập ổn định và tăng trưởng tốt (rõ ràng hợp kinh tế - tài chính).', major: 'QLKT', category: 'Nhu cầu' },
+            { id: 30, text: 'Tôi muốn công việc giúp thúc đẩy văn hóa và giá trị đạo đức trong tổ chức.', major: 'VHĐQL', category: 'Nhu cầu' },
         ];
 
         // Lưu trữ kết quả trả lời của người dùng
@@ -391,7 +391,7 @@
                         <div class="p-4 border border-gray-200 rounded-xl shadow-md bg-white">
                             <p class="font-semibold text-dark-text mb-3">
                                 <span class="text-primary-blue font-extrabold mr-2">Q${q.id}.</span> ${q.text}
-                                <span class="text-xs text-gray-500 block mt-1">(Ngành: ${majors[q.major]})</span>
+                                <!-- ĐÃ XÓA TÊN NGÀNH KHỎI PHẦN NÀY THEO YÊU CẦU CỦA NGƯỜI DÙNG -->
                             </p>
                             <div class="flex flex-wrap justify-between space-x-2">
                                 ${[1, 2, 3, 4, 5].map(score => `
@@ -448,7 +448,7 @@
             if (currentCard) {
                 currentCard.classList.remove('hidden');
                 currentStep = step;
-            } else if (step === totalSteps) { // Xử lý thẻ 6/7/8 (Kết quả)
+            } else if (step === totalSteps) { // Xử lý thẻ 6 (Kết quả)
                  document.querySelector('#card-6').classList.remove('hidden');
                  currentStep = step;
             }
@@ -514,7 +514,7 @@
             }
         });
 
-        // Xử lý sự kiện nút Xem Kết quả (Card 5 -> Card 6/7/8)
+        // Xử lý sự kiện nút Xem Kết quả (Card 5 -> Card 6)
         document.getElementById('calculate-btn').addEventListener('click', () => {
             if (isCurrentCardComplete(currentStep)) {
                 showStep(totalSteps); // Chuyển sang bước kết quả
@@ -539,7 +539,7 @@
             // Khởi tạo điểm cho từng chuyên ngành
             Object.keys(majors).forEach(majorCode => majorScores[majorCode] = 0);
 
-            // 1. Tính tổng điểm thực tế cho mỗi chuyên ngành
+            // 1. Tính tổng điểm thực tế cho mỗi chuyên ngành (Dù tên ngành đã ẩn, logic tính vẫn dựa trên major code trong dữ liệu câu hỏi)
             for (let i = 1; i <= 30; i++) {
                 const qId = `q${i}`;
                 const score = userScores[qId] || 0; // Điểm 0 nếu chưa trả lời (mặc dù đã kiểm tra)
@@ -595,7 +595,7 @@
                     majorPercentages.sort((a, b) => b.percentage - a.percentage);
                     const top2Majors = majorPercentages.slice(0, 2);
 
-                    // 4. Hiển thị kết quả (Thẻ 7/8)
+                    // 4. Hiển thị kết quả (Thẻ 6)
                     displayResults(top2Majors);
 
                     calculationStatus.classList.add('hidden');
